@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, Cambria, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #F7F5F0;
+  --color-surface: #EFECE4;
+  --color-paper: #FCFBF8;
+  --color-ink: #1E2421;
+  --color-ink-muted: #5A635E;
+  --color-hairline: #DED8CC;
+  --color-accent: #285245;
+  --color-accent-hover: #1E3F35;
+  --color-bronze: #8C5A2B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+}
+
+/* Proteksi Ruang Baca Daring: cegah pencetakan halaman ketika buku dibuka */
+@media print {
+  .protected-reader-print-block {
+    display: none !important;
+  }
+
+  body.reader-open::after {
+    content: "Pranala Pustaka — Koleksi ini hanya tersedia untuk dibaca secara daring di peramban dan tidak dapat dicetak atau diunduh.";
+    display: block;
+    padding: 3rem;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.25rem;
+    color: #1E2421;
+  }
+}

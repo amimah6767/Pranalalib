@@ -1,0 +1,6 @@
+{
+  "name": "Pranala Pustaka",
+  "description": "Perpustakaan digital dan repositori ilmiah daring dengan ruang baca web tanpa unduh yang nyaman di berbagai perangkat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
